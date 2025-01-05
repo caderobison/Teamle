@@ -1,0 +1,24 @@
+.big-circle {
+  width: 100%; /* Width of the circle */
+  /*height: 300px; !* Height of the circle (same as width) *!*/
+  height: 5vw;               /* Height based on viewport width */
+  /*aspect-ratio: 3;*/
+  border-radius: 50%;   /* Curved sides with flat top and bottom */
+  display: flex; /* Center content inside the circle */
+  /*background-color: red; !* Background color of the circle *!*/
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+.wrong-answer {
+  background-color: red; /* Background color of the circle */
+}
+
+.near-answer {
+  background-color: gold; /* Background color of the circle */
+}
+
+.correct-answer {
+  background-color: green; /* Background color of the circle */
+}

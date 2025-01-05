@@ -1,23 +1,29 @@
-import { Col, Table } from "antd";
+import {Col, Table} from "antd";
 import React from "react";
-import Column from "antd/es/table/Column";
+import {ResultCard} from "./ResultCard/ResultCard";
+import {AnswerType} from "./ResultCard/AnswerType";
 
 export function GuessTable() {
   const columns = [
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: "League",
+      key: "league",
+      render: () => <ResultCard answerType={AnswerType.Near}/>,
     },
     {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
+      title: "State",
+      key: "state",
+      render: () => <ResultCard answerType={AnswerType.Near}/>,
     },
     {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
+      title: "Distance",
+      key: "distance",
+      render: () => <ResultCard answerType={AnswerType.Near}/>,
+    },
+    {
+      title: "Card",
+      key: "card",
+      render: () => <ResultCard answerType={AnswerType.Near}/>,
     },
   ];
   const dataSource = [
