@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {TestHandler} from "./Handlers/testhandler";
 
 function App() {
+  const handler = new TestHandler();
+  const [testString, setTestString] = useState("");
+  useEffect(() => {handler.get().then(s => setTestString(s))});
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +20,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {testString}
         </a>
       </header>
     </div>
