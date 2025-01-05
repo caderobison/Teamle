@@ -6,8 +6,8 @@
     "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.5.14",
     "cra-template-typescript": "1.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -36,6 +36,10 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "antd": "^5.22.7",
+    "prettier": "^3.4.2",
     "web-vitals": "^4.2.4"
   },
   "proxy": "http://localhost:8080"
