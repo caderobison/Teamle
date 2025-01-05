@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "react"
+  },
+  "moduleResolution": "NodeNext",
+
+  "include": ["src/components", "src/custom.d.ts"]
+}
