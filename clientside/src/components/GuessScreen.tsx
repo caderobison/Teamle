@@ -1,29 +1,35 @@
 import {Col, Table} from "antd";
 import React from "react";
 import {ResultCard} from "./ResultCard/ResultCard";
-import {AnswerType} from "./ResultCard/AnswerType";
+import {AnswerType, Leagues} from "./ResultCard/ResultCardTypes";
+import {LeagueResultCard} from "./ResultCard/LeagueResultCard/LeagueResultCard";
 
 export function GuessTable() {
   const columns = [
     {
       title: "League",
       key: "league",
-      render: () => <ResultCard answerType={AnswerType.Near}/>,
+      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
     },
     {
-      title: "State",
+      title: "Number of Championships",
+      key: "championships",
+      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={true}/>,
+    },
+    {
+      title: "Last Championship",
+      key: "lastChampionship",
+      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
+    },
+    {
+      title: "Year founded",
+      key: "foundedDate",
+      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
+    },
+    {
+      title: "State or Province",
       key: "state",
-      render: () => <ResultCard answerType={AnswerType.Near}/>,
-    },
-    {
-      title: "Distance",
-      key: "distance",
-      render: () => <ResultCard answerType={AnswerType.Near}/>,
-    },
-    {
-      title: "Card",
-      key: "card",
-      render: () => <ResultCard answerType={AnswerType.Near}/>,
+      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
     },
   ];
   const dataSource = [
