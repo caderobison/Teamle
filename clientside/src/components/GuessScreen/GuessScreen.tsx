@@ -49,7 +49,6 @@ export function GuessTable() {
       yearFoundedDistance: 12,
       state: "Wisconsin",
       stateCorrect: false
-      // guessIsCorrect: false,
     } as DataRowProps,
   ];
   return (
