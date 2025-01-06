@@ -3,6 +3,7 @@ import React from "react";
 import {ResultCard} from "./ResultCard/ResultCard";
 import {AnswerType, Leagues} from "./ResultCard/ResultCardTypes";
 import {LeagueResultCard} from "./ResultCard/LeagueResultCard/LeagueResultCard";
+import {NumberChampionshipsCard} from "./ResultCard/NumberChampionshipsCard";
 
 export function GuessTable() {
   const columns = [
@@ -14,7 +15,7 @@ export function GuessTable() {
     {
       title: "Number of Championships",
       key: "championships",
-      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={true}/>,
+      render: () => <NumberChampionshipsCard guess={7} distanceFromCorrect={2}/>,
     },
     {
       title: "Last Championship",
