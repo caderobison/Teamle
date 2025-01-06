@@ -5,6 +5,7 @@ import {AnswerType, Leagues} from "./ResultCard/ResultCardTypes";
 import {LeagueResultCard} from "./ResultCard/LeagueResultCard/LeagueResultCard";
 import {NumberChampionshipsCard} from "./ResultCard/NumberChampionshipsCard";
 import {LastChampionshipCard} from "./ResultCard/LastChampionshipCard";
+import {StateResultCard} from "./ResultCard/StateResultCard";
 
 export function GuessTable() {
   const columns = [
@@ -26,12 +27,12 @@ export function GuessTable() {
     {
       title: "Year founded",
       key: "foundedDate",
-      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
+      render: () => <NumberChampionshipsCard guess={1923} distanceFromCorrect={2}/>,
     },
     {
       title: "State or Province",
       key: "state",
-      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
+      render: () => <StateResultCard guess={"Michigan"} guessIsCorrect={false}/>,
     },
   ];
   const dataSource = [
