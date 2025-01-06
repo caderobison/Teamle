@@ -4,6 +4,7 @@ import {ResultCard} from "./ResultCard/ResultCard";
 import {AnswerType, Leagues} from "./ResultCard/ResultCardTypes";
 import {LeagueResultCard} from "./ResultCard/LeagueResultCard/LeagueResultCard";
 import {NumberChampionshipsCard} from "./ResultCard/NumberChampionshipsCard";
+import {LastChampionshipCard} from "./ResultCard/LastChampionshipCard";
 
 export function GuessTable() {
   const columns = [
@@ -20,7 +21,7 @@ export function GuessTable() {
     {
       title: "Last Championship",
       key: "lastChampionship",
-      render: () => <LeagueResultCard guess={Leagues.NBA} guessIsCorrect={false}/>,
+      render: () => <LastChampionshipCard guess={1967} distanceFromCorrect={3}/>,
     },
     {
       title: "Year founded",
