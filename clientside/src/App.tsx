@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { TestHandler } from "./Handlers/testhandler";
-import { GuessTable } from "./components/GuessScreen";
+import { GuessTable } from "./components/GuessScreen/GuessScreen";
 
 function App() {
   const handler = new TestHandler();
