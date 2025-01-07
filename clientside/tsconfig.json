@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "jsx": "react"
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   },
   "moduleResolution": "NodeNext",
 
-  "include": ["src/components", "src/custom.d.ts"]
+  "include": ["src/components", "src/custom.d.ts", "react-app-env.d.ts"]
 }
