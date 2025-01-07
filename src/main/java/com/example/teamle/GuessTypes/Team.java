@@ -1,13 +1,15 @@
 package com.example.teamle.GuessTypes;
 
+import com.example.teamle.GuessTypes.StatesAndProvinces.StatesAndProvinces;
+
 public class Team {
     private Leagues league;
     private int numberChampionships;
     private int lastChampionship;
     private int yearFounded;
-    private States state;
+    private StatesAndProvinces state;
 
-    public Team(Leagues league, int numberChampionships, int lastChampionship, int yearFounded, States state) {
+    public Team(Leagues league, int numberChampionships, int lastChampionship, int yearFounded, StatesAndProvinces state) {
         this.league = league;
         this.numberChampionships = numberChampionships;
         this.lastChampionship = lastChampionship;
@@ -47,11 +49,11 @@ public class Team {
         this.yearFounded = yearFounded;
     }
 
-    public States getState() {
+    public StatesAndProvinces getState() {
         return state;
     }
 
-    public void setState(States state) {
+    public void setState(StatesAndProvinces state) {
         this.state = state;
     }
 }
