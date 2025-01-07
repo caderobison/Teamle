@@ -12,9 +12,7 @@ public class GuessController {
     @PostMapping("/{teamId}")
     @ResponseBody
     public GuessResponse CompareGuess(@PathVariable int teamId){
-        GuessResponse g = new GuessResponse();
         Team t = new Team(1, Leagues.MLB, 1, 1988, 1912, States.ALASKA);
-
-        return g;
+        return GuessManager.CompareTeams(teamId, t.getTeamId());
     }
 }

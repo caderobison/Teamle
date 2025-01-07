@@ -6,7 +6,7 @@ import com.example.teamle.GuessTypes.StatesAndProvinces.States;
 import com.example.teamle.GuessTypes.Team;
 
 public class GuessManager {
-    public GuessResponse CompareTeams(int guessTeamId, int correctTeamId){
+    public static GuessResponse CompareTeams(int guessTeamId, int correctTeamId){
         GuessResponse response = new GuessResponse();
         Team correctTeam = GetTeam(correctTeamId);
         if(guessTeamId == correctTeamId){
@@ -24,7 +24,7 @@ public class GuessManager {
         return response;
     }
 
-    public Team GetTeam(int teamId){
+    public static Team GetTeam(int teamId){
         // not implemented
         return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.DC);
     }
