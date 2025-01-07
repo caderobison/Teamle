@@ -6,10 +6,10 @@ import com.example.teamle.GuessTypes.StatesAndProvinces.States;
 import com.example.teamle.GuessTypes.Team;
 
 public class GuessManager {
-    public static GuessResponse CompareTeams(int guessTeamId, int correctTeamId){
+    public static GuessResponse CalculateGuessValues(int guessTeamId){
         GuessResponse response = new GuessResponse();
-        Team correctTeam = GetTeam(correctTeamId);
-        if(guessTeamId == correctTeamId){
+        Team correctTeam = GetCorrectTeam();
+        if(guessTeamId == correctTeam.getTeamId()){
             response.copyValuesFromTeam(correctTeam);
             response.teamGuessedCorrectly();
             return response;
@@ -27,5 +27,9 @@ public class GuessManager {
     public static Team GetTeam(int teamId){
         // not implemented
         return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.DC);
+    }
+
+    public static Team GetCorrectTeam(){
+        return new Team(1, Leagues.NFL, 0, 0, 1928, States.MICHIGAN);
     }
 }
