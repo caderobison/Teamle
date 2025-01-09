@@ -1,4 +1,4 @@
-package com.example.teamle.GuessTypes.StatesAndProvinces;
+package com.example.teamle.Enums.TeamleEnums.StatesAndProvinces;
 
 public enum Provinces implements StatesAndProvinces{
     ALBERTA,
