@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+// import React, { useEffect, useState } from "react";
+// import logo from "./logo.svg";
 import "./App.css";
-import { TestHandler } from "./Handlers/testhandler";
+import { GuessHandler } from "./Handlers/GuessHandler";
 import { GuessTable } from "./components/GuessScreen/GuessScreen";
 
 function App() {
-  const handler = new TestHandler();
-  const [testString, setTestString] = useState("");
-  useEffect(() => {
-    handler.get().then((s) => setTestString(s));
-  });
   return (
     // <div className="App">
     //   <header className="App-header">
