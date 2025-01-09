@@ -2,11 +2,11 @@ import {Card} from "antd";
 import React from "react";
 import "./ResultCard.css"
 import classNames from "classnames";
-import {AnswerType, DirectionToAnswer} from "./ResultCardTypes";
+import {AnswerType, AnswerDirection} from "./ResultCardTypes";
 
 interface IResultCardProps {
   answerType : AnswerType
-  directionToAnswer?: DirectionToAnswer
+  directionToAnswer?: AnswerDirection
   guessText: string
 }
 export function ResultCard(props : IResultCardProps) {

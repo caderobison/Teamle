@@ -1,6 +1,8 @@
-package com.example.teamle.GuessTypes.StatesAndProvinces;
+package com.example.teamle.Enums.TeamleEnums.StatesAndProvinces;
 
-public enum States implements StatesAndProvinces {
+import static com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.StatesUtility.CapitalizeStateOrProvince;
+
+public enum States implements StatesAndProvinces{
     ALABAMA,
     ALASKA,
     ARIZONA,
@@ -51,5 +53,20 @@ public enum States implements StatesAndProvinces {
     WEST_VIRGINIA,
     WISCONSIN,
     WYOMING,
-    DC
+    DC;
+
+    @Override
+    public String toString() {
+        if (this != DC){
+            return CapitalizeStateOrProvince(this.name());
+        }
+        else{
+            return "Washington D.C.";
+        }
+    }
+
+    @Override
+    public int getEnumValue() {
+        return this.ordinal();
+    }
 }

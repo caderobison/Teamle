@@ -1,8 +1,8 @@
-import {AnswerType, IEnumResultCardProps, Leagues} from "../ResultCardTypes";
+import {AnswerType, IResultCardProps, Leagues} from "../ResultCardTypes";
 import {ResultCard} from "../ResultCard";
 import React from "react";
 
-interface ILeagueResultCardProps extends IEnumResultCardProps{
+interface ILeagueResultCardProps extends IResultCardProps{
     guess: Leagues
 }
 export function LeagueResultCard (props: ILeagueResultCardProps) {
@@ -20,8 +20,7 @@ export function LeagueResultCard (props: ILeagueResultCardProps) {
                 return ""
         }
     }
-    const {guessIsCorrect, guess} = props
-    const answerType = guessIsCorrect ? AnswerType.Correct : AnswerType.Wrong
+    const {answerType, guess} = props
     return <ResultCard answerType={answerType} guessText={getNameOfLeague(guess)} />
 
 }

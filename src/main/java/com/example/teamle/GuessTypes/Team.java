@@ -1,6 +1,7 @@
 package com.example.teamle.GuessTypes;
 
-import com.example.teamle.GuessTypes.StatesAndProvinces.StatesAndProvinces;
+import com.example.teamle.Enums.TeamleEnums.Leagues;
+import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.StatesAndProvinces;
 
 public class Team {
     private int teamId;

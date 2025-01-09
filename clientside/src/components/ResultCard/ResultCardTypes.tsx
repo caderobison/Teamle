@@ -1,8 +1,10 @@
-export interface INumberResultCardProps {
-    distanceFromCorrect : number
+export interface IResultCardProps {
+    answerType: AnswerType
 }
-export interface IEnumResultCardProps {
-    guessIsCorrect: boolean
+
+export interface INumberResultCardProps extends IResultCardProps{
+    guess : number,
+    answerDirection : AnswerDirection
 }
 
 export enum AnswerType {
@@ -11,7 +13,7 @@ export enum AnswerType {
     Correct = 2
 }
 
-export enum DirectionToAnswer{
+export enum AnswerDirection{
     Lower = 0,
     Higher = 1,
     Correct = 2
@@ -26,10 +28,10 @@ export enum Leagues{
 
 export const CaluclateDirectionFromNumber = (guessNumber : number) => {
     if (guessNumber > 0) {
-        return DirectionToAnswer.Higher
+        return AnswerDirection.Higher
     }
     else if (guessNumber < 0){
-        return DirectionToAnswer.Lower
+        return AnswerDirection.Lower
     }
-    else return DirectionToAnswer.Correct
+    else return AnswerDirection.Correct
 }

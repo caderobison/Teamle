@@ -1,8 +1,8 @@
 package com.example.teamle;
 
 import com.example.teamle.GuessTypes.GuessResponse;
-import com.example.teamle.GuessTypes.Leagues;
-import com.example.teamle.GuessTypes.StatesAndProvinces.States;
+import com.example.teamle.Enums.TeamleEnums.Leagues;
+import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.States;
 import com.example.teamle.GuessTypes.Team;
 
 public class GuessManager {
@@ -26,7 +26,7 @@ public class GuessManager {
 
     public static Team GetTeam(int teamId){
         // not implemented
-        return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.DC);
+        return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.NEW_JERSEY);
     }
 
     public static Team GetCorrectTeam(){

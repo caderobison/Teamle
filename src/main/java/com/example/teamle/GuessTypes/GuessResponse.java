@@ -1,14 +1,14 @@
 package com.example.teamle.GuessTypes;
 
-import com.example.teamle.GuessTypes.StatesAndProvinces.AnswerDirection;
-import com.example.teamle.GuessTypes.StatesAndProvinces.States;
-import com.example.teamle.GuessTypes.StatesAndProvinces.StatesAndProvinces;
+import com.example.teamle.Enums.TeamleEnums.AnswerTypes;
+import com.example.teamle.Enums.TeamleEnums.Leagues;
+import com.example.teamle.Enums.TeamleEnums.AnswerDirection;
+import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.StatesAndProvinces;
 import org.yaml.snakeyaml.util.Tuple;
 
 public class GuessResponse {
     private Leagues league;
     private AnswerTypes leagueAnswerType;
-    private AnswerDirection leagueDirection;
 
     private int numberChampionships;
     private AnswerTypes numberChampionshipsAnswerType;
@@ -44,9 +44,6 @@ public class GuessResponse {
         return leagueAnswerType;
     }
 
-    public AnswerDirection getLeagueDirection() {
-        return leagueDirection;
-    }
 
     //number championships
     public void setNumberChampionships(int guessNumberChampionships, int correctNumberChampionships) {
@@ -94,7 +91,7 @@ public class GuessResponse {
 
     // year founded
     public void setYearFounded(int guessYearFounded, int corectYearFounded) {
-        this.numberChampionships = guessYearFounded;
+        this.yearFounded = guessYearFounded;
         Tuple<AnswerTypes, AnswerDirection> result = calculateAnswerTypeAndDirection(guessYearFounded, corectYearFounded, GuessConstants.YEAR_FOUNDED_NEARMAX);
         this.yearFoundedAnswerType = result._1();
         this.yearFoundedDirection = result._2();
@@ -111,7 +108,7 @@ public class GuessResponse {
     // state
     public void setState(StatesAndProvinces guessState, StatesAndProvinces correctState) {
         this.state = guessState.toString();
-        this.leagueAnswerType = guessState == correctState ? AnswerTypes.CORRECT : AnswerTypes.WRONG;
+        this.stateAnswerType = guessState == correctState ? AnswerTypes.CORRECT : AnswerTypes.WRONG;
     }
 
     public String getState() {
