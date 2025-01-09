@@ -2,6 +2,8 @@ package com.example.teamle.Enums.TeamleEnums.StatesAndProvinces;
 
 import org.springframework.util.StringUtils;
 
+import static com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.StatesUtility.CapitalizeStateOrProvince;
+
 public enum Provinces implements StatesAndProvinces{
     ALBERTA,
     BRITISH_COLUMBIA,
@@ -21,8 +23,7 @@ public enum Provinces implements StatesAndProvinces{
     @Override
     public String toString() {
         if (this != NEWFOUNDLAND_LABRADOR){
-            String noUnderscores = this.name().replace('_', ' ');
-            return StringUtils.capitalize(noUnderscores);
+            return CapitalizeStateOrProvince(this.name());
         }
         else{
             return "Newfoundland and Labrador";

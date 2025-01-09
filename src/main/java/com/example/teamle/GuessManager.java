@@ -26,7 +26,7 @@ public class GuessManager {
 
     public static Team GetTeam(int teamId){
         // not implemented
-        return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.DC);
+        return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.NEW_JERSEY);
     }
 
     public static Team GetCorrectTeam(){
