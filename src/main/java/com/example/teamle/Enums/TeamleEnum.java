@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public interface TeamleEnum {
     @JsonValue
-    public  int getEnumValue();
+    public int getEnumValue();
 }
 
 

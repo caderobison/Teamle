@@ -1,6 +1,8 @@
 package com.example.teamle.Enums.TeamleEnums.StatesAndProvinces;
 
-public enum States implements StatesAndProvinces {
+import org.springframework.util.StringUtils;
+
+public enum States implements StatesAndProvinces{
     ALABAMA,
     ALASKA,
     ARIZONA,
@@ -51,5 +53,21 @@ public enum States implements StatesAndProvinces {
     WEST_VIRGINIA,
     WISCONSIN,
     WYOMING,
-    DC
+    DC;
+
+    @Override
+    public String toString() {
+        if (this != DC){
+            String noUnderscores = this.name().replace('_', ' ');
+            return StringUtils.capitalize(noUnderscores);
+        }
+        else{
+            return "Washington D.C.";
+        }
+    }
+
+    @Override
+    public int getEnumValue() {
+        return this.ordinal();
+    }
 }

@@ -1,4 +1,6 @@
 package com.example.teamle.Enums.TeamleEnums.StatesAndProvinces;
 
-public interface StatesAndProvinces {
+import com.example.teamle.Enums.TeamleEnum;
+
+public interface StatesAndProvinces extends TeamleEnum {
 }
