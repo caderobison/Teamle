@@ -1,9 +1,10 @@
-package com.example.teamle.GuessTypes;
+package com.example.teamle.Guess.GuessTypes;
 
 import com.example.teamle.Enums.TeamleEnums.AnswerTypes;
 import com.example.teamle.Enums.TeamleEnums.Leagues;
 import com.example.teamle.Enums.TeamleEnums.AnswerDirection;
 import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.StatesAndProvinces;
+import com.example.teamle.Guess.Team;
 import org.yaml.snakeyaml.util.Tuple;
 
 public class GuessResponse {
