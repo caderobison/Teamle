@@ -1,4 +1,4 @@
-package com.example.teamle.GuessTypes;
+package com.example.teamle.Guess;
 
 import com.example.teamle.Enums.TeamleEnums.AnswerTypes;
 import com.example.teamle.Enums.TeamleEnums.Leagues;

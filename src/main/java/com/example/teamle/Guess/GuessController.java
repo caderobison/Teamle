@@ -1,5 +1,4 @@
-package com.example.teamle;
-import com.example.teamle.GuessTypes.GuessResponse;
+package com.example.teamle.Guess;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

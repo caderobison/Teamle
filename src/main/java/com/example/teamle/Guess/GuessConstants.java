@@ -1,4 +1,4 @@
-package com.example.teamle.GuessTypes;
+package com.example.teamle.Guess;
 
 public class GuessConstants {
     public static final int NUMBER_CHAMPIONSHIPS_NEARMAX = 3;

@@ -3,29 +3,47 @@ import React, { useEffect, useState } from "react";
 import { LeagueResultCard } from "../ResultCard/ResultCardVariations/LeagueResultCard";
 import { NumberResultCard } from "../ResultCard/ResultCardVariations/NumberResultCard";
 import { StateResultCard } from "../ResultCard/ResultCardVariations/StateResultCard";
-import { GuessResponse, IGuessDataRowProps } from "./GuessScreenTypes";
+import {
+  GuessResponse,
+  IGuessDataRowProps,
+  TeamSkeleton,
+} from "./GuessScreenTypes";
 import { GuessHandler } from "../../Handlers/GuessHandler";
+import { TeamsHandler } from "../../Handlers/TeamsHandler";
+import { InputBar } from "../InputBar";
 
 class GuessTableState {
   constructor() {
     this.response = null;
+    this.allTeams = null;
   }
   response: GuessResponse | null;
+  allTeams: TeamSkeleton[] | null;
 }
 
 export function GuessTable() {
   const [state, setState] = useState<GuessTableState>(new GuessTableState());
   const getData = async () => {
-    console.log("HERE");
     const handler = new GuessHandler();
     const resp = await handler.compareGuess(3);
-    setState({
+    setState((prevState) => ({
+      ...prevState,
       response: resp,
-    });
+    }));
+  };
+
+  const getAllTeams = async () => {
+    const handler = new TeamsHandler();
+    const resp = await handler.getAllTeams();
+    setState((prevState) => ({
+      ...prevState,
+      allTeams: resp,
+    }));
   };
 
   useEffect(() => {
     getData();
+    getAllTeams();
   }, []);
 
   const columns = [
@@ -83,7 +101,7 @@ export function GuessTable() {
       ),
     },
   ];
-  if (state.response) {
+  if (state.response && state.allTeams) {
     const dataSource = [
       {
         key: "1",
@@ -109,14 +127,17 @@ export function GuessTable() {
       } as IGuessDataRowProps,
     ];
     return (
-      <Col span={16} offset={4}>
-        <Table
-          dataSource={dataSource}
-          columns={columns}
-          tableLayout="fixed"
-          pagination={false}
-        />
-      </Col>
+      <>
+        <Col span={16} offset={4}>
+          <Table
+            dataSource={dataSource}
+            columns={columns}
+            tableLayout="fixed"
+            pagination={false}
+          />
+          <InputBar allTeams={state.allTeams} />
+        </Col>
+      </>
     );
   }
 }

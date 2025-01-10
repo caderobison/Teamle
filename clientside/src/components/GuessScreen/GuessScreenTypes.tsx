@@ -84,3 +84,16 @@ export class GuessResponse {
   yearFoundedAnswerType: AnswerType;
   yearFoundedDirection: AnswerDirection;
 }
+
+interface ITeamSkeletonProps {
+  teamId: number;
+  teamName: string;
+}
+export class TeamSkeleton {
+  constructor(data: ITeamSkeletonProps) {
+    this.teamId = data.teamId;
+    this.teamName = data.teamName;
+  }
+  teamId: number;
+  teamName: string;
+}
