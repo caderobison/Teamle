@@ -1,9 +1,9 @@
 .big-circle {
   width: 100%; /* Width of the circle */
   /*height: 300px; !* Height of the circle (same as width) *!*/
-  height: 5vw;               /* Height based on viewport width */
+  height: 5vw; /* Height based on viewport width */
   /*aspect-ratio: 3;*/
-  border-radius: 50%;   /* Curved sides with flat top and bottom */
+  border-radius: 50%; /* Curved sides with flat top and bottom */
   display: flex; /* Center content inside the circle */
   /*background-color: red; !* Background color of the circle *!*/
   justify-content: center;
