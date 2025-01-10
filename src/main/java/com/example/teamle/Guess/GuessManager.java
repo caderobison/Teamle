@@ -1,9 +1,7 @@
 package com.example.teamle.Guess;
 
-import com.example.teamle.Guess.GuessTypes.GuessResponse;
 import com.example.teamle.Enums.TeamleEnums.Leagues;
 import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.States;
-import com.example.teamle.Guess.GuessTypes.Team;
 
 public class GuessManager {
     public static GuessResponse CalculateGuessValues(int guessTeamId){
