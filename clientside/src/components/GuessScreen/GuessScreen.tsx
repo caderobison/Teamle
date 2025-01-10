@@ -6,6 +6,7 @@ import {StateResultCard} from "../ResultCard/ResultCardVariations/StateResultCar
 import {GuessResponse, IGuessDataRowProps, TeamSkeleton} from "./GuessScreenTypes";
 import {GuessHandler} from "../../Handlers/GuessHandler";
 import {TeamsHandler} from "../../Handlers/TeamsHandler";
+import {InputBar} from "../InputBar";
 
 class GuessTableState{
   constructor() {
@@ -69,7 +70,7 @@ export function GuessTable() {
       render: (record : IGuessDataRowProps) => <StateResultCard guess={record.state} answerType={record.stateAnswerType}/>,
     },
   ];
-if(state.response) {
+if(state.response && state.allTeams) {
 
   const dataSource = [
     {
@@ -93,7 +94,7 @@ if(state.response) {
       yearFoundedDirection: state.response.yearFoundedDirection,
     } as IGuessDataRowProps,
   ];
-  return (
+  return (<>
       <Col span={16} offset={4}>
         <Table
             dataSource={dataSource}
@@ -101,7 +102,9 @@ if(state.response) {
             tableLayout="fixed"
             pagination={false}
         />
+      <InputBar allTeams={state.allTeams}/>
       </Col>
+    </>
   );
 }
 }
