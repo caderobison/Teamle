@@ -3,7 +3,6 @@ import {TeamSkeleton} from "./GuessScreen/GuessScreenTypes";
 import {AutoComplete, AutoCompleteProps} from "antd";
 
 interface IInputBarProps{
-    currentValue?: TeamSkeleton,
     allTeams: TeamSkeleton[]
 }
 class InputBarState{
@@ -12,7 +11,7 @@ class InputBarState{
 }
 
 export function InputBar(props: IInputBarProps){
-    const {currentValue, allTeams} = props;
+    const { allTeams} = props;
     const [state, setState] = useState<InputBarState>({options : [], selectedTeam : null});
     const getShownOptions = (input: string) : AutoCompleteProps['options'] => {
         const teams =  allTeams.filter((t) => t.teamName.toLowerCase().includes(input.toLowerCase()));
