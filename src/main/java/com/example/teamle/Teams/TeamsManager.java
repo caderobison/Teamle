@@ -15,7 +15,6 @@ import java.util.List;
 public class TeamsManager {
     public static List<TeamSkeleton> GetAllTeams(){
         File mlbDb, nflDb, nbaDb, nhlDb;
-        String currentDirectory = System.getProperty("user.dir");
         try {
             mlbDb = GetDBFile("src/main/java/com/example/teamle/Database/MLBTeamSkeletons.Json");
             nflDb = GetDBFile("src/main/java/com/example/teamle/Database/NFLTeamSkeletons.Json");
