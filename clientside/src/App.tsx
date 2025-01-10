@@ -2,9 +2,7 @@ import "./App.css";
 import { GuessTable } from "./components/GuessScreen/GuessScreen";
 
 function App() {
-  return (
-    <GuessTable></GuessTable>
-  );
+  return <GuessTable></GuessTable>;
 }
 
 export default App;

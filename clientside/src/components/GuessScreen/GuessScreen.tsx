@@ -20,6 +20,7 @@ export function GuessTable() {
 
   const[state, setState] = useState<GuessTableState>(new GuessTableState())
   const getData = async () => {
+    console.log("HERE")
     const handler = new GuessHandler();
     const resp = await handler.compareGuess(3);
     setState((prevState) => ({
