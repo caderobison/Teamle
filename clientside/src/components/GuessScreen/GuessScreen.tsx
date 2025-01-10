@@ -3,30 +3,43 @@ import React, {useEffect, useState} from "react";
 import {LeagueResultCard} from "../ResultCard/ResultCardVariations/LeagueResultCard";
 import {NumberResultCard} from "../ResultCard/ResultCardVariations/NumberResultCard";
 import {StateResultCard} from "../ResultCard/ResultCardVariations/StateResultCard";
-import {GuessResponse, IGuessDataRowProps} from "./GuessScreenTypes";
+import {GuessResponse, IGuessDataRowProps, TeamSkeleton} from "./GuessScreenTypes";
 import {GuessHandler} from "../../Handlers/GuessHandler";
+import {TeamsHandler} from "../../Handlers/TeamsHandler";
 
 class GuessTableState{
   constructor() {
     this.response = null;
+    this.allTeams = null
   }
-  response : GuessResponse | null
+  response : GuessResponse | null;
+  allTeams : TeamSkeleton[] | null;
 }
 
 export function GuessTable() {
 
   const[state, setState] = useState<GuessTableState>(new GuessTableState())
   const getData = async () => {
-    console.log("HERE")
     const handler = new GuessHandler();
     const resp = await handler.compareGuess(3);
-    setState({
-      response: resp
-    });
+    setState((prevState) => ({
+      ...prevState,
+      response: resp,
+    }));
+  }
+
+  const getAllTeams = async () => {
+    const handler = new TeamsHandler();
+    const resp = await handler.getAllTeams();
+    setState((prevState) => ({
+      ...prevState,
+      allTeams: resp,
+    }));
   }
 
   useEffect(() => {
     getData();
+    getAllTeams();
   }, [])
 
   const columns = [
