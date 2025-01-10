@@ -1,7 +1,6 @@
 package com.example.teamle.Teams;
 
-import com.example.teamle.Guess.GuessManager;
-import com.example.teamle.Guess.GuessTypes.GuessResponse;
+import com.example.teamle.Teams.TeamSkeleton.TeamSkeleton;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

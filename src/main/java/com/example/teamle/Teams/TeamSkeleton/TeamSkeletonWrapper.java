@@ -1,4 +1,4 @@
-package com.example.teamle.Teams;
+package com.example.teamle.Teams.TeamSkeleton;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -6,28 +6,23 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.io.IOException;
+import java.util.List;
 
-public class TeamSkeleton {
-    private int TeamId;
-    private String TeamName;
-
+public class TeamSkeletonWrapper {
     @JsonDeserialize(using = CommentIgnoringDeserializer.class) // Custom deserializer
-    private String Comment;
+    private String comment;
+    private List<TeamSkeleton> data;
 
-    public int getTeamId() {
-        return TeamId;
+    public List<TeamSkeleton> getData() {
+        return data;
     }
 
-    public String getTeamName() {
-        return TeamName;
-    }
 
-    public TeamSkeleton(int teamId, String teamName) {
-        TeamId = teamId;
-        TeamName = teamName;
-    }
+    private static class CommentIgnoringDeserializer extends JsonDeserializer<String> {
+        CommentIgnoringDeserializer() {
+            super();
+        }
 
-    private class CommentIgnoringDeserializer extends JsonDeserializer<String> {
         @Override
         public String deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
             // Ignore the "Comment" field
