@@ -2,20 +2,25 @@ import { Col } from "antd";
 import { InputBar, TeamSkeletonOption } from "./InputBar";
 import { EnterButton } from "./EnterButton";
 import React, { useState } from "react";
-import { TeamSkeleton } from "../GuessScreen/GuessScreenTypes";
+import { GuessResponse, TeamSkeleton } from "../GuessScreen/GuessScreenTypes";
 import { GuessHandler } from "../../Handlers/GuessHandler";
 
 interface IInputSectionProps {
   allTeams: TeamSkeleton[];
+  onGuessResponse: (response: GuessResponse) => void;
 }
 
 class InputSectionState {
   selectedTeam?: TeamSkeleton;
+  searchValue?: TeamSkeleton;
 }
 
 export function InputSection(props: IInputSectionProps) {
-  const [state, setState] = useState<InputSectionState>({ selectedTeam: null });
-  const { allTeams } = props;
+  const [state, setState] = useState<InputSectionState>({
+    selectedTeam: null,
+    searchValue: null,
+  });
+  const { allTeams, onGuessResponse } = props;
   const handler = new GuessHandler();
   const handleSelect = (
     value: TeamSkeleton,
@@ -27,19 +32,28 @@ export function InputSection(props: IInputSectionProps) {
   const handleClear = () => {
     setState({
       selectedTeam: null,
+      searchValue: null,
     });
   };
 
   const handleChange = (_value: TeamSkeleton, _option?: TeamSkeletonOption) => {
-    setState((prevState) => ({ ...prevState, selectedTeam: null }));
-  };
-
-  const handleSubmit = (_event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    const resp = handler.compareGuess(state.selectedTeam.teamId);
     setState((prevState) => ({
       ...prevState,
       selectedTeam: null,
+      searchValue: _value,
     }));
+  };
+
+  const handleSubmit = async (
+    _event: React.MouseEvent<HTMLElement, MouseEvent>,
+  ) => {
+    const resp = await handler.compareGuess(state.selectedTeam.teamId);
+    setState((prevState) => ({
+      ...prevState,
+      selectedTeam: null,
+      searchValue: null,
+    }));
+    onGuessResponse(resp);
   };
 
   return (
@@ -50,6 +64,7 @@ export function InputSection(props: IInputSectionProps) {
           onSelect={handleSelect}
           onClear={handleClear}
           onChange={handleChange}
+          value={state.searchValue}
         />
       </Col>
       <Col span={3}>

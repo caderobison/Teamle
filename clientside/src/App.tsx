@@ -1,8 +1,8 @@
 import "./App.css";
-import { GuessTable } from "./components/GuessScreen/GuessScreen";
+import { GuessScreen } from "./components/GuessScreen/GuessScreen";
 
 function App() {
-  return <GuessTable></GuessTable>;
+  return <GuessScreen></GuessScreen>;
 }
 
 export default App;

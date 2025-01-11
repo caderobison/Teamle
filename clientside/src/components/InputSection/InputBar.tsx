@@ -10,6 +10,7 @@ interface IInputBarProps {
   onSelect: (value: TeamSkeleton, option: TeamSkeletonOption) => void;
   onClear: () => void;
   onChange: (value: TeamSkeleton, option?: TeamSkeletonOption) => void;
+  value: TeamSkeleton | null;
 }
 class InputBarState {
   options: AutoCompleteProps["options"];
@@ -17,7 +18,7 @@ class InputBarState {
 }
 
 export function InputBar(props: IInputBarProps) {
-  const { allTeams, onSelect, onClear } = props;
+  const { allTeams, onSelect, onClear, value } = props;
   const [state, setState] = useState<InputBarState>({
     options: [],
     selectedTeam: null,
@@ -43,6 +44,7 @@ export function InputBar(props: IInputBarProps) {
           options: getShownOptions(text),
         }))
       }
+      value={value}
       onSelect={onSelect}
       allowClear={true}
       onClear={onClear}
