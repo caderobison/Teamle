@@ -1,4 +1,4 @@
-import { Col, Table } from "antd";
+import { Col, Row, Table } from "antd";
 import React, { useEffect, useState } from "react";
 import { LeagueResultCard } from "../ResultCard/ResultCardVariations/LeagueResultCard";
 import { NumberResultCard } from "../ResultCard/ResultCardVariations/NumberResultCard";
@@ -10,7 +10,7 @@ import {
 } from "./GuessScreenTypes";
 import { GuessHandler } from "../../Handlers/GuessHandler";
 import { TeamsHandler } from "../../Handlers/TeamsHandler";
-import { InputBar } from "../InputBar";
+import { InputSection } from "../InputSection/InputSection";
 
 class GuessTableState {
   constructor() {
@@ -135,7 +135,9 @@ export function GuessTable() {
             tableLayout="fixed"
             pagination={false}
           />
-          <InputBar allTeams={state.allTeams} />
+          <Row>
+            <InputSection allTeams={state.allTeams} />
+          </Row>
         </Col>
       </>
     );

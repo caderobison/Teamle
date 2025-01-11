@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { TeamSkeleton } from "./GuessScreen/GuessScreenTypes";
+import { TeamSkeleton } from "../GuessScreen/GuessScreenTypes";
 import { AutoComplete, AutoCompleteProps } from "antd";
 
+export type TeamSkeletonOption = {
+  data: TeamSkeleton;
+};
 interface IInputBarProps {
   allTeams: TeamSkeleton[];
+  onSelect: (value: TeamSkeleton, option: TeamSkeletonOption) => void;
+  onClear: () => void;
+  onChange: (value: TeamSkeleton, option?: TeamSkeletonOption) => void;
 }
 class InputBarState {
   options: AutoCompleteProps["options"];
@@ -11,7 +17,7 @@ class InputBarState {
 }
 
 export function InputBar(props: IInputBarProps) {
-  const { allTeams } = props;
+  const { allTeams, onSelect, onClear } = props;
   const [state, setState] = useState<InputBarState>({
     options: [],
     selectedTeam: null,
@@ -27,20 +33,9 @@ export function InputBar(props: IInputBarProps) {
     }));
   };
 
-  const handleSelect = (value: TeamSkeleton, option) => {
-    setState((prevState) => ({ ...prevState, selectedTeam: option.data }));
-  };
-
-  const handleClear = () => {
-    setState({
-      selectedTeam: null,
-      options: allTeams,
-    });
-  };
-
   return (
     <AutoComplete
-      style={{ width: 200 }}
+      style={{ width: "100%" }}
       options={state.options}
       onSearch={(text) =>
         setState((prevState) => ({
@@ -48,9 +43,10 @@ export function InputBar(props: IInputBarProps) {
           options: getShownOptions(text),
         }))
       }
-      onSelect={handleSelect}
+      onSelect={onSelect}
       allowClear={true}
-      onClear={handleClear}
+      onClear={onClear}
+      onChange={props.onChange}
     />
   );
 }
