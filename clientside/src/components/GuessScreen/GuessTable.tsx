@@ -103,6 +103,7 @@ export function GuessTable(props: IGuessTableProps) {
       columns={columns}
       tableLayout="fixed"
       pagination={false}
+      locale={{ emptyText: null }}
     />
   );
 }
