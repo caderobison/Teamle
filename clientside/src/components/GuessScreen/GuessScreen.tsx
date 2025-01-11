@@ -1,4 +1,4 @@
-import { Col, Row, Table } from "antd";
+import { Col, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import { GuessResponse, TeamSkeleton } from "./GuessScreenTypes";
 import { TeamsHandler } from "../../Handlers/TeamsHandler";

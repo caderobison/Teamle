@@ -3,7 +3,7 @@ import { LeagueResultCard } from "../ResultCard/ResultCardVariations/LeagueResul
 import { NumberResultCard } from "../ResultCard/ResultCardVariations/NumberResultCard";
 import { StateResultCard } from "../ResultCard/ResultCardVariations/StateResultCard";
 import React, { useEffect, useState } from "react";
-import { Col, Table } from "antd";
+import { Table } from "antd";
 
 interface IGuessTableProps {
   guessData: GuessResponse[];
