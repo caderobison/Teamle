@@ -29,16 +29,4 @@ public class TeamSkeleton {
         teamId = 0;
         teamName = "NO NAME";
     }
-//
-//    private static class CommentIgnoringDeserializer extends JsonDeserializer<String> {
-//        CommentIgnoringDeserializer() {
-//            super();
-//        }
-//
-//        @Override
-//        public String deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
-//            // Ignore the "Comment" field
-//            return null;
-//        }
-//    }
 }
