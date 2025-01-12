@@ -5,19 +5,22 @@ import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.StatesAndProvince
 
 public class Team {
     private int teamId;
+
+    private String teamName;
     private Leagues league;
     private int numberChampionships;
     private int lastChampionship;
     private int yearFounded;
     private StatesAndProvinces state;
 
-    public Team(int teamId, Leagues league, int numberChampionships, int lastChampionship, int yearFounded, StatesAndProvinces state) {
+    public Team(int teamId, String teamName, Leagues league, int numberChampionships, int lastChampionship, int yearFounded, StatesAndProvinces state) {
         this.teamId = teamId;
         this.league = league;
         this.numberChampionships = numberChampionships;
         this.lastChampionship = lastChampionship;
         this.yearFounded = yearFounded;
         this.state = state;
+        this.teamName = teamName;
     }
 
     public Leagues getLeague() {
@@ -65,5 +68,13 @@ public class Team {
 
     public void setTeamId(int teamId) {
         this.teamId = teamId;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 }

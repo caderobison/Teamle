@@ -2,6 +2,7 @@ package com.example.teamle.Guess;
 
 import com.example.teamle.Enums.TeamleEnums.Leagues;
 import com.example.teamle.Enums.TeamleEnums.StatesAndProvinces.States;
+import com.example.teamle.Teams.TeamsEngine;
 
 public class GuessManager {
     public static GuessResponse CalculateGuessValues(int guessTeamId){
@@ -22,12 +23,11 @@ public class GuessManager {
         return response;
     }
 
-    public static Team GetTeam(int teamId){
-        // not implemented
-        return new Team(teamId, Leagues.NFL, 2, 1967, 1970, States.NEW_JERSEY);
+    private static Team GetTeam(int teamId){
+        return TeamsEngine.GetTeam(teamId);
     }
 
-    public static Team GetCorrectTeam(){
-        return new Team(1, Leagues.NFL, 0, 0, 1928, States.MICHIGAN);
+    private static Team GetCorrectTeam(){
+        return new Team(1, "Detroit Lions", Leagues.NFL, 0, 0, 1928, States.MICHIGAN);
     }
 }
