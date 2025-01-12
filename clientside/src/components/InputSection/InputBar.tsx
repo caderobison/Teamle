@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  JSXElementConstructor,
+  ReactElement,
+  useEffect,
+  useState,
+} from "react";
 import { TeamSkeleton } from "../GuessScreen/GuessScreenTypes";
 import { AutoComplete, AutoCompleteProps } from "antd";
 
@@ -37,7 +42,7 @@ export function InputBar(props: IInputBarProps) {
     }
     return teams.map((team) => ({
       value: team.teamName, // Display the team name in the dropdown
-      label: team.teamName, // Set the label to the team name as well
+      label: renderOption(team), // Set the label to the team name as well
       data: team, // Store the full team object in the `data` property
     }));
   };
@@ -70,10 +75,23 @@ export function InputBar(props: IInputBarProps) {
     setState((prevState) => ({ ...prevState, optionsOpen: isOpen }));
   };
 
-  // const handleFocus = () => {
-  //   getShownOptions(state.searchText);
-  //   setState((prevState) => ({ ...prevState, optionsOpen: true }));
-  // };
+  const renderOption = (teamOption: TeamSkeleton): ReactElement => {
+    const parts = teamOption.teamName.split(
+      new RegExp(`(${state.searchText})`, "gi"),
+    );
+    if (state.searchText.length === 0) return <>{teamOption.teamName}</>;
+    return (
+      <>
+        {parts.map((part) =>
+          part.toLowerCase() === state.searchText.toLowerCase() ? (
+            <b>{part}</b>
+          ) : (
+            <>{part}</>
+          ),
+        )}
+      </>
+    );
+  };
 
   return (
     <AutoComplete
