@@ -5,6 +5,7 @@ import com.example.teamle.Guess.Team;
 import com.example.teamle.JsonDeserializers.TeamDeserializer;
 import com.example.teamle.JsonDeserializers.TeamSkeletonDeserializer;
 import com.example.teamle.Teams.TeamSkeleton.TeamSkeleton;
+import com.example.teamle.Teams.TeamSkeleton.TeamSkeletonComparator;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -49,6 +50,7 @@ public class TeamsEngine {
         allTeams.addAll(nbaTeams);
         allTeams.addAll(mlbTeams);
         allTeams.addAll(nhlTeams);
+        allTeams.sort(new TeamSkeletonComparator());
         return allTeams;
     }
 
