@@ -15,8 +15,6 @@ public class TeamSkeletonDeserializer extends JsonDeserializer<List<TeamSkeleton
     @Override
     public List<TeamSkeleton> deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         JsonNode node = p.getCodec().readTree(p);
-
-        // Manually construct the User object and exclude the password field
         List<TeamSkeleton> teams = new ArrayList<>();
         ArrayNode data = (ArrayNode) node.get("data");
         for (JsonNode teamData: data) {
