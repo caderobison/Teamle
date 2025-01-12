@@ -1,9 +1,16 @@
 package com.example.teamle.Teams.TeamSkeleton;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+
+import java.io.IOException;
+
 public class TeamSkeleton {
     private int teamId;
     private String teamName;
 
+    private int yearFounded;
 
     public int getTeamId() {
         return teamId;

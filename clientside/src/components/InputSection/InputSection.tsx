@@ -13,12 +13,14 @@ interface IInputSectionProps {
 class InputSectionState {
   selectedTeam?: TeamSkeleton;
   searchValue?: TeamSkeleton;
+  submitted: boolean;
 }
 
 export function InputSection(props: IInputSectionProps) {
   const [state, setState] = useState<InputSectionState>({
     selectedTeam: null,
     searchValue: null,
+    submitted: false,
   });
   const { allTeams, onGuessResponse } = props;
   const handler = new GuessHandler();
@@ -30,10 +32,11 @@ export function InputSection(props: IInputSectionProps) {
   };
 
   const handleClear = () => {
-    setState({
+    setState((prevState) => ({
+      ...prevState,
       selectedTeam: null,
       searchValue: null,
-    });
+    }));
   };
 
   const handleChange = (_value: TeamSkeleton, _option?: TeamSkeletonOption) => {
@@ -52,6 +55,7 @@ export function InputSection(props: IInputSectionProps) {
       ...prevState,
       selectedTeam: null,
       searchValue: null,
+      submitted: !prevState.submitted,
     }));
     onGuessResponse(resp);
   };
@@ -65,6 +69,7 @@ export function InputSection(props: IInputSectionProps) {
           onClear={handleClear}
           onChange={handleChange}
           value={state.searchValue}
+          submitted={state.submitted}
         />
       </Col>
       <Col span={3}>
