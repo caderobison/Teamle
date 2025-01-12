@@ -76,7 +76,7 @@ public class TeamsEngine {
         module.addDeserializer(Team.class, new TeamDeserializer(teamId, league));
 
         mapper.registerModule(module);
-        Team selectedTeam = null;
+        Team selectedTeam;
         try{
             selectedTeam = mapper.readValue(dbFile, Team.class);
         }
@@ -95,16 +95,16 @@ public class TeamsEngine {
     }
 
     private static Leagues GetLeagueFromId(int teamId){
-        if (TeamConstants.NFL_MIN_ID < teamId && teamId < TeamConstants.NFL_MAX_ID){
+        if (TeamConstants.NFL_MIN_ID <= teamId && teamId <= TeamConstants.NFL_MAX_ID){
             return Leagues.NFL;
         }
-        else if (TeamConstants.NBA_MIN_ID < teamId && teamId < TeamConstants.NBA_MAX_ID){
+        else if (TeamConstants.NBA_MIN_ID <= teamId && teamId <= TeamConstants.NBA_MAX_ID){
             return Leagues.NBA;
         }
-        else if (TeamConstants.MLB_MIN_ID < teamId && teamId < TeamConstants.MLB_MAX_ID){
+        else if (TeamConstants.MLB_MIN_ID <= teamId && teamId <= TeamConstants.MLB_MAX_ID){
             return Leagues.MLB;
         }
-        else if (TeamConstants.NHL_MIN_ID < teamId && teamId < TeamConstants.NHL_MAX_ID){
+        else if (TeamConstants.NHL_MIN_ID <= teamId && teamId <= TeamConstants.NHL_MAX_ID){
             return Leagues.NHL;
         }
         else return null;

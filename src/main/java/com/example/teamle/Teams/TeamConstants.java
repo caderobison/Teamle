@@ -16,6 +16,12 @@ public class TeamConstants {
     public static final int MLB_MAX_ID = 2030;
 
     public static final int NHL_MIN_ID = 3001;
-    public static final int NHL_MAX_ID = 3030;
+    public static final int NHL_MAX_ID = 3032;
+
+    public static final int MIN_STATE_ID = 1;
+    public static final int MAX_STATE_ID = 51;
+
+    public static final int MIN_PROVINCE_ID = 52;
+    public static final int MAX_PROVINCE_ID = 64;
 
 }

@@ -2,6 +2,7 @@ import React, {
   JSXElementConstructor,
   ReactElement,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { TeamSkeleton } from "../GuessScreen/GuessScreenTypes";
@@ -33,6 +34,7 @@ export function InputBar(props: IInputBarProps) {
     optionsOpen: false,
     searchText: "",
   });
+  const autocompleteRef = useRef(null); // Create a ref for the AutoComplete component
   const getShownOptions = (input: string): AutoCompleteProps["options"] => {
     let teams = allTeams;
     if (input && input.trim().length !== 0) {
@@ -60,6 +62,7 @@ export function InputBar(props: IInputBarProps) {
     setState((prevState) => ({
       ...prevState,
       options: allTeams,
+      searchText: "",
       submitted: !props.submitted,
     }));
   }, [props.submitted]);
@@ -93,8 +96,18 @@ export function InputBar(props: IInputBarProps) {
     );
   };
 
+  const handleSelectWrapper = (
+    value: TeamSkeleton,
+    option: TeamSkeletonOption,
+  ) => {
+    onSelect(value, option);
+    setOpen(false);
+    autocompleteRef.current.blur();
+  };
+
   return (
     <AutoComplete
+      ref={autocompleteRef}
       style={{ width: "100%" }}
       options={getShownOptions(state.searchText)}
       open={state.optionsOpen}
@@ -106,7 +119,7 @@ export function InputBar(props: IInputBarProps) {
         }))
       }
       value={value}
-      onSelect={onSelect}
+      onSelect={handleSelectWrapper}
       allowClear={true}
       onClear={onClear}
       onChange={props.onChange}
