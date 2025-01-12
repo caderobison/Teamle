@@ -1,13 +1,16 @@
 package com.example.teamle.Teams;
 
+import com.example.teamle.JsonDeserializers.TeamSkeletonDeserializer;
 import com.example.teamle.Teams.TeamSkeleton.TeamSkeleton;
-import com.example.teamle.Teams.TeamSkeleton.TeamSkeletonWrapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -26,20 +29,25 @@ public class TeamsManager {
         }
 
         ObjectMapper mapper = new ObjectMapper();
-        TeamSkeletonWrapper mlbTeams, nflTeams, nbaTeams, nhlTeams;
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(List.class, new TeamSkeletonDeserializer());
+        mapper.registerModule(module);
+
+        List<TeamSkeleton> mlbTeams, nflTeams, nbaTeams, nhlTeams;
+        TypeReference<List<TeamSkeleton>> listType = new TypeReference<>() {};
         try{
-            mlbTeams = mapper.readValue(mlbDb, TeamSkeletonWrapper.class);
-            nflTeams = mapper.readValue(nflDb, TeamSkeletonWrapper.class);
-            nbaTeams = mapper.readValue(nbaDb, TeamSkeletonWrapper.class);
-            nhlTeams = mapper.readValue(nhlDb, TeamSkeletonWrapper.class);
+            mlbTeams = mapper.readValue(mlbDb, listType);
+            nflTeams = mapper.readValue(nflDb, listType);
+            nbaTeams = mapper.readValue(nbaDb, listType);
+            nhlTeams = mapper.readValue(nhlDb, listType);
         }
         catch (IOException e){
             return null;
         }
-        List<TeamSkeleton> allTeams = new ArrayList<>(nflTeams.getData());
-        allTeams.addAll(nbaTeams.getData());
-        allTeams.addAll(mlbTeams.getData());
-        allTeams.addAll(nhlTeams.getData());
+        List<TeamSkeleton> allTeams = nflTeams;
+        allTeams.addAll(nbaTeams);
+        allTeams.addAll(mlbTeams);
+        allTeams.addAll(nhlTeams);
         return allTeams;
     }
 
