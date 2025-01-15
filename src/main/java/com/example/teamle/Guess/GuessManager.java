@@ -21,6 +21,7 @@ public class GuessManager {
         response.setNumberChampionships(guessTeam.getNumberChampionships(), correctTeam.getNumberChampionships());
         response.setYearFounded(guessTeam.getYearFounded(), correctTeam.getYearFounded());
         response.setTeamName(guessTeam.getTeamName());
+        response.setTeamId(guessTeamId);
         return response;
     }
 
@@ -29,6 +30,6 @@ public class GuessManager {
     }
 
     private static Team GetCorrectTeam(){
-        return new Team(1, "Detroit Lions", Leagues.NFL, 0, 0, 1928, States.MICHIGAN);
+        return TeamsEngine.GetTeam(3);
     }
 }

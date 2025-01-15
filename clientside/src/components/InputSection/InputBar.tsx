@@ -6,6 +6,7 @@ export type TeamSkeletonOption = {
   data: TeamSkeleton;
   label: ReactElement;
   value: string;
+  disabled: boolean;
 };
 interface IInputBarProps {
   allTeams: TeamSkeleton[];
@@ -14,6 +15,7 @@ interface IInputBarProps {
   onChange: (value: TeamSkeleton, option?: TeamSkeletonOption) => void;
   value: TeamSkeleton | null;
   submitted: boolean;
+  guessIds: number[];
 }
 class InputBarState {
   options: AutoCompleteProps["options"];
@@ -42,6 +44,7 @@ export function InputBar(props: IInputBarProps) {
       value: team.teamName, // Display the team name in the dropdown
       label: renderOption(team), // Set the label to the team name as well
       data: team, // Store the full team object in the `data` property
+      disabled: props.guessIds.includes(team.teamId),
     }));
   };
 
