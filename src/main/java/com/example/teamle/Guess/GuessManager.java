@@ -20,6 +20,7 @@ public class GuessManager {
         response.setLastChampionship(guessTeam.getLastChampionship(), correctTeam.getLastChampionship());
         response.setNumberChampionships(guessTeam.getNumberChampionships(), correctTeam.getNumberChampionships());
         response.setYearFounded(guessTeam.getYearFounded(), correctTeam.getYearFounded());
+        response.setTeamName(guessTeam.getTeamName());
         return response;
     }
 
