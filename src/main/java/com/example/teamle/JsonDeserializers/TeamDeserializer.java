@@ -34,7 +34,6 @@ public class TeamDeserializer extends JsonDeserializer<Team> {
             Class<? extends StatesAndProvinces> stateClass = StatesAndProvinces.getCorrectType(stateId);
             StatesAndProvinces state;
             try {
-//                Method[] x = stateClass.getMethods();
                 state = (StatesAndProvinces) stateClass.getMethod("getStateOrProvinceFromValue", int.class).invoke(null, stateId);
             } catch (Exception e){
                 state = null;
