@@ -14,6 +14,10 @@ export interface IDataRowProps {
   teamName: string;
 }
 
+export interface ITitleRowProps extends IDataRowProps {
+  guessNumber: number;
+}
+
 export interface IGuessResponseProps {
   league: Leagues;
   leagueAnswerType: AnswerType;
@@ -33,6 +37,7 @@ export interface IGuessResponseProps {
   yearFoundedAnswerType: AnswerType;
   yearFoundedDirection: AnswerDirection;
   teamName: string;
+  teamId: number;
 }
 
 export class GuessResponse {
@@ -55,6 +60,7 @@ export class GuessResponse {
     this.yearFoundedAnswerType = data.yearFoundedAnswerType;
     this.yearFoundedDirection = data.yearFoundedDirection;
     this.teamName = data.teamName;
+    this.teamId = data.teamId;
   }
   league: Leagues;
   leagueAnswerType: AnswerType;
@@ -75,6 +81,7 @@ export class GuessResponse {
   yearFoundedDirection: AnswerDirection;
 
   teamName: string;
+  teamId: number;
 }
 
 interface ITeamSkeletonProps {

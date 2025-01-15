@@ -14,6 +14,7 @@ class InputSectionState {
   selectedTeam?: TeamSkeleton;
   searchValue?: TeamSkeleton;
   submitted: boolean;
+  guessIds: number[];
 }
 
 export function InputSection(props: IInputSectionProps) {
@@ -21,6 +22,7 @@ export function InputSection(props: IInputSectionProps) {
     selectedTeam: null,
     searchValue: null,
     submitted: false,
+    guessIds: [],
   });
   const { allTeams, onGuessResponse } = props;
   const handler = new GuessHandler();
@@ -56,6 +58,7 @@ export function InputSection(props: IInputSectionProps) {
       selectedTeam: null,
       searchValue: null,
       submitted: !prevState.submitted,
+      guessIds: [...prevState.guessIds, resp.teamId],
     }));
     onGuessResponse(resp);
   };
@@ -70,6 +73,7 @@ export function InputSection(props: IInputSectionProps) {
           onChange={handleChange}
           value={state.searchValue}
           submitted={state.submitted}
+          guessIds={state.guessIds}
         />
       </Col>
       <Col span={3}>

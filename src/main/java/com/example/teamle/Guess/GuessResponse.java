@@ -27,10 +27,22 @@ public class GuessResponse {
     private String state;
     private AnswerTypes stateAnswerType;
 
-
     private String teamName;
 
+
+    private int teamId;
+
     // getters and setters
+
+    //teamId
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
+    }
+    //teamName
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
@@ -150,6 +162,7 @@ public class GuessResponse {
         this.state = t.getState().toString();
         this.league = t.getLeague();
         this.teamName = t.getTeamName();
+        this.teamId = t.getTeamId();
     }
 
     //private functions
