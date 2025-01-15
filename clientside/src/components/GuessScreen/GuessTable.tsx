@@ -8,7 +8,6 @@ import { NumberResultCard } from "../ResultCard/ResultCardVariations/NumberResul
 import { StateResultCard } from "../ResultCard/ResultCardVariations/StateResultCard";
 import React, { useEffect, useState } from "react";
 import { Table, TableProps } from "antd";
-import classNames from "classnames";
 import "./GuessTable.css";
 
 interface IGuessTableProps {
