@@ -4,26 +4,14 @@ import {
   Leagues,
 } from "../ResultCard/ResultCardTypes";
 
-export interface IGuessDataRowProps extends IGuessResponseProps {
+export interface IGuessDataRowProps
+  extends IGuessResponseProps,
+    IDataRowProps {}
+
+export interface IDataRowProps {
   key: string;
-
-  league: Leagues;
-  leagueAnswerType: AnswerType;
-
-  state: string;
-  stateAnswerType: AnswerType;
-
-  numberChampionships: number;
-  numberChampionshipsAnswerType: AnswerType;
-  numberChampionshipsDirection: AnswerDirection;
-
-  lastChampionship: number;
-  lastChampionshipAnswerType: AnswerType;
-  lastChampionshipDirection: AnswerDirection;
-
-  yearFounded: number;
-  yearFoundedAnswerType: AnswerType;
-  yearFoundedDirection: AnswerDirection;
+  isTitle: boolean;
+  teamName: string;
 }
 
 export interface IGuessResponseProps {
@@ -44,6 +32,7 @@ export interface IGuessResponseProps {
   yearFounded: number;
   yearFoundedAnswerType: AnswerType;
   yearFoundedDirection: AnswerDirection;
+  teamName: string;
 }
 
 export class GuessResponse {
@@ -65,6 +54,7 @@ export class GuessResponse {
     this.yearFounded = data.yearFounded;
     this.yearFoundedAnswerType = data.yearFoundedAnswerType;
     this.yearFoundedDirection = data.yearFoundedDirection;
+    this.teamName = data.teamName;
   }
   league: Leagues;
   leagueAnswerType: AnswerType;
@@ -83,6 +73,8 @@ export class GuessResponse {
   yearFounded: number;
   yearFoundedAnswerType: AnswerType;
   yearFoundedDirection: AnswerDirection;
+
+  teamName: string;
 }
 
 interface ITeamSkeletonProps {

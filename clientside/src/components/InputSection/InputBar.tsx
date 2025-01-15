@@ -1,15 +1,11 @@
-import React, {
-  JSXElementConstructor,
-  ReactElement,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import { TeamSkeleton } from "../GuessScreen/GuessScreenTypes";
 import { AutoComplete, AutoCompleteProps } from "antd";
 
 export type TeamSkeletonOption = {
   data: TeamSkeleton;
+  label: ReactElement;
+  value: string;
 };
 interface IInputBarProps {
   allTeams: TeamSkeleton[];
@@ -35,7 +31,7 @@ export function InputBar(props: IInputBarProps) {
     searchText: "",
   });
   const autocompleteRef = useRef(null); // Create a ref for the AutoComplete component
-  const getShownOptions = (input: string): AutoCompleteProps["options"] => {
+  const getShownOptions = (input: string): TeamSkeletonOption[] => {
     let teams = allTeams;
     if (input && input.trim().length !== 0) {
       teams = allTeams.filter((t) =>

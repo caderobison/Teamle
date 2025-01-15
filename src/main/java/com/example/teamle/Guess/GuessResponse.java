@@ -27,7 +27,17 @@ public class GuessResponse {
     private String state;
     private AnswerTypes stateAnswerType;
 
+
+    private String teamName;
+
     // getters and setters
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public String getTeamName() {
+        return this.teamName;
+    }
 
     //leagues
     public void setLeague(Leagues guessLeague, Leagues correctLeague) {
@@ -139,6 +149,7 @@ public class GuessResponse {
         this.yearFounded = t.getYearFounded();
         this.state = t.getState().toString();
         this.league = t.getLeague();
+        this.teamName = t.getTeamName();
     }
 
     //private functions

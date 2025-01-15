@@ -8,6 +8,7 @@ public class GuessController {
     @PostMapping("/{teamId}")
     @ResponseBody
     public GuessResponse CompareGuess(@PathVariable int teamId){
-        return GuessManager.CalculateGuessValues(teamId);
+        GuessResponse resp = GuessManager.CalculateGuessValues(teamId);
+        return resp;
     }
 }

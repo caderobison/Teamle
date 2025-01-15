@@ -1,0 +1,14 @@
+.hidden-row {
+    display: none;
+}
+
+.title-row > td{
+    line-height: 1% !important;
+    padding: 1% !important;
+    background-color: white !important;
+}
+
+.team-title {
+    text-align: left;
+    margin: 0
+}
