@@ -139,8 +139,6 @@ export function GuessTable(props: IGuessTableProps) {
     showExpandColumn: false,
   };
 
-  const customClass = classNames("hidden-row");
-
   return (
     <>
       <Table
