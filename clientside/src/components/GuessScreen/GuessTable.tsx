@@ -2,6 +2,7 @@ import {
   GuessResponse,
   IDataRowProps,
   IGuessDataRowProps,
+  ITitleRowProps,
 } from "./GuessScreenTypes";
 import { LeagueResultCard } from "../ResultCard/ResultCardVariations/LeagueResultCard";
 import { NumberResultCard } from "../ResultCard/ResultCardVariations/NumberResultCard";
@@ -93,7 +94,8 @@ export function GuessTable(props: IGuessTableProps) {
         key: `${newGuessIndex.toString()}-expanded`,
         isTitle: true,
         teamName: newGuess.teamName,
-      } as IDataRowProps;
+        guessNumber: newGuessIndex + 1,
+      } as ITitleRowProps;
       const guessRow = {
         key: newGuessIndex.toString(),
         league: newGuess.league,
@@ -124,10 +126,12 @@ export function GuessTable(props: IGuessTableProps) {
   }, [props.guessData]);
 
   const expandableProps: TableProps<IDataRowProps>["expandable"] = {
-    expandedRowRender: (record: IDataRowProps) => {
+    expandedRowRender: (record: ITitleRowProps) => {
       return (
         <div className={"team-title"}>
-          <h3>{record.teamName}</h3> {/* Display username above the row */}
+          <h3>
+            {record.guessNumber}. {record.teamName}
+          </h3>
         </div>
       );
     },
