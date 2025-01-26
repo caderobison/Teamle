@@ -2,7 +2,8 @@ import { Card } from "antd";
 import React from "react";
 import "./ResultCard.css";
 import classNames from "classnames";
-import { AnswerType, AnswerDirection } from "./ResultCardTypes";
+import { AnswerDirection, AnswerType } from "./ResultCardTypes";
+import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
 
 interface IResultCardProps {
   answerType: AnswerType;
@@ -16,5 +17,22 @@ export function ResultCard(props: IResultCardProps) {
     "wrong-answer": answerType === AnswerType.Wrong,
     "near-answer": answerType === AnswerType.Near,
   });
-  return <Card className={colorClass}>{guessText}</Card>;
+
+  const renderCorrectArrow = () => {
+    if (props.directionToAnswer === AnswerDirection.Higher) {
+      return <CaretUpOutlined style={{ alignContent: "center" }} />;
+    }
+    if (props.directionToAnswer === AnswerDirection.Lower) {
+      return <CaretDownOutlined style={{ alignContent: "center" }} />;
+    }
+  };
+  return (
+    <Card className={colorClass}>
+      <div className={"card-body"}>
+        <div className={"card-body card-arrow"}>{renderCorrectArrow()}</div>
+        <div className={"card-body card-number"}>{guessText}</div>
+        <div className={"card-body card-arrow"}>{renderCorrectArrow()} </div>
+      </div>
+    </Card>
+  );
 }

@@ -22,3 +22,19 @@
 .correct-answer {
   background-color: green; /* Background color of the circle */
 }
+
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-arrow {
+  width: 10%;
+}
+
+.card-number {
+  width: 80%;
+}
+
