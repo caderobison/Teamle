@@ -1,37 +1,221 @@
 {
   "comment" : "The Ids are prefixed with the values of the league enum and an additional 0. In this case, the NFL has an enum of 0 so no prefix is needed",
-  "data": [
-    {"teamId": 1, "teamName": "Arizona Cardinals", "yearFounded": 1920, "stateId": 3},
-    {"teamId": 2, "teamName": "Atlanta Falcons", "yearFounded": 1966, "stateId": 10},
-    {"teamId": 3, "teamName": "Baltimore Ravens", "yearFounded": 1996, "stateId": 20},
-    {"teamId": 4, "teamName": "Buffalo Bills", "yearFounded": 1960, "stateId": 32},
-    {"teamId": 5, "teamName": "Carolina Panthers", "yearFounded": 1995, "stateId": 33},
-    {"teamId": 6, "teamName": "Chicago Bears", "yearFounded": 1920, "stateId": 13},
-    {"teamId": 7, "teamName": "Cincinnati Bengals", "yearFounded": 1968, "stateId": 35},
-    {"teamId": 8, "teamName": "Cleveland Browns", "yearFounded": 1946, "stateId": 35},
-    {"teamId": 9, "teamName": "Dallas Cowboys", "yearFounded": 1960, "stateId": 43},
-    {"teamId": 10, "teamName": "Denver Broncos", "yearFounded": 1960, "stateId": 6},
-    {"teamId": 11, "teamName": "Detroit Lions", "yearFounded": 1930, "stateId": 22},
-    {"teamId": 12, "teamName": "Green Bay Packers", "yearFounded": 1921, "stateId": 49},
-    {"teamId": 13, "teamName": "Houston Texans", "yearFounded": 2002, "stateId": 43},
-    {"teamId": 14, "teamName": "Indianapolis Colts", "yearFounded": 1953, "stateId": 14},
-    {"teamId": 15, "teamName": "Jacksonville Jaguars", "yearFounded": 1995, "stateId": 9},
-    {"teamId": 16, "teamName": "Kansas City Chiefs", "yearFounded": 1960, "stateId": 25},
-    {"teamId": 17, "teamName": "Las Vegas Raiders", "yearFounded": 1960, "stateId": 28},
-    {"teamId": 18, "teamName": "Los Angeles Chargers", "yearFounded": 1960, "stateId": 5},
-    {"teamId": 19, "teamName": "Los Angeles Rams", "yearFounded": 1937, "stateId": 5},
-    {"teamId": 20, "teamName": "Miami Dolphins", "yearFounded": 1966, "stateId": 9},
-    {"teamId": 21, "teamName": "Minnesota Vikings", "yearFounded": 1961, "stateId": 23},
-    {"teamId": 22, "teamName": "New England Patriots", "yearFounded": 1960, "stateId": 21},
-    {"teamId": 23, "teamName": "New Orleans Saints", "yearFounded": 1967, "stateId": 18},
-    {"teamId": 24, "teamName": "New York Giants", "yearFounded": 1925, "stateId": 32},
-    {"teamId": 25, "teamName": "New York Jets", "yearFounded": 1960, "stateId": 32},
-    {"teamId": 26, "teamName": "Philadelphia Eagles", "yearFounded": 1933, "stateId": 38},
-    {"teamId": 27, "teamName": "Pittsburgh Steelers", "yearFounded": 1933, "stateId": 38},
-    {"teamId": 28, "teamName": "San Francisco 49ers", "yearFounded": 1946, "stateId": 5},
-    {"teamId": 29, "teamName": "Seattle Seahawks", "yearFounded": 1976, "stateId": 47},
-    {"teamId": 30, "teamName": "Tampa Bay Buccaneers", "yearFounded": 1976, "stateId": 9},
-    {"teamId": 31, "teamName": "Tennessee Titans", "yearFounded": 1960, "stateId": 42},
-    {"teamId": 32, "teamName": "Washington Commanders", "yearFounded": 1932, "stateId": 51}
-  ]
+  "data" : [ {
+    "teamId" : "11",
+    "teamName" : "Detroit Lions",
+    "yearFounded" : "1930",
+    "stateId" : "22",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "1",
+    "teamName" : "Arizona Cardinals",
+    "yearFounded" : "1920",
+    "stateId" : "3",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "7",
+    "teamName" : "Cincinnati Bengals",
+    "yearFounded" : "1968",
+    "stateId" : "35",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "13",
+    "teamName" : "Houston Texans",
+    "yearFounded" : "2002",
+    "stateId" : "43",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "8",
+    "teamName" : "Cleveland Browns",
+    "yearFounded" : "1946",
+    "stateId" : "35",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "14",
+    "teamName" : "Indianapolis Colts",
+    "yearFounded" : "1953",
+    "stateId" : "14",
+    "numberOfChampionships" : "2",
+    "lastChampionship" : "2006"
+  }, {
+    "teamId" : "3",
+    "teamName" : "Baltimore Ravens",
+    "yearFounded" : "1996",
+    "stateId" : "20",
+    "numberOfChampionships" : "2",
+    "lastChampionship" : "2012"
+  }, {
+    "teamId" : "10",
+    "teamName" : "Denver Broncos",
+    "yearFounded" : "1960",
+    "stateId" : "6",
+    "numberOfChampionships" : "3",
+    "lastChampionship" : "2015"
+  }, {
+    "teamId" : "9",
+    "teamName" : "Dallas Cowboys",
+    "yearFounded" : "1960",
+    "stateId" : "43",
+    "numberOfChampionships" : "5",
+    "lastChampionship" : "1995"
+  }, {
+    "teamId" : "21",
+    "teamName" : "Minnesota Vikings",
+    "yearFounded" : "1961",
+    "stateId" : "23",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "15",
+    "teamName" : "Jacksonville Jaguars",
+    "yearFounded" : "1995",
+    "stateId" : "9",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "2",
+    "teamName" : "Atlanta Falcons",
+    "yearFounded" : "1966",
+    "stateId" : "10",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "5",
+    "teamName" : "Carolina Panthers",
+    "yearFounded" : "1995",
+    "stateId" : "33",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "18",
+    "teamName" : "Los Angeles Chargers",
+    "yearFounded" : "1960",
+    "stateId" : "5",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "4",
+    "teamName" : "Buffalo Bills",
+    "yearFounded" : "1960",
+    "stateId" : "32",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "16",
+    "teamName" : "Kansas City Chiefs",
+    "yearFounded" : "1960",
+    "stateId" : "25",
+    "numberOfChampionships" : "4",
+    "lastChampionship" : "2023"
+  }, {
+    "teamId" : "12",
+    "teamName" : "Green Bay Packers",
+    "yearFounded" : "1921",
+    "stateId" : "49",
+    "numberOfChampionships" : "4",
+    "lastChampionship" : "2010"
+  }, {
+    "teamId" : "31",
+    "teamName" : "Tennessee Titans",
+    "yearFounded" : "1960",
+    "stateId" : "42",
+    "numberOfChampionships" : "0",
+    "lastChampionship" : "0"
+  }, {
+    "teamId" : "6",
+    "teamName" : "Chicago Bears",
+    "yearFounded" : "1920",
+    "stateId" : "13",
+    "numberOfChampionships" : "1",
+    "lastChampionship" : "1985"
+  }, {
+    "teamId" : "20",
+    "teamName" : "Miami Dolphins",
+    "yearFounded" : "1966",
+    "stateId" : "9",
+    "numberOfChampionships" : "2",
+    "lastChampionship" : "1973"
+  }, {
+    "teamId" : "25",
+    "teamName" : "New York Jets",
+    "yearFounded" : "1960",
+    "stateId" : "32",
+    "numberOfChampionships" : "1",
+    "lastChampionship" : "1968"
+  }, {
+    "teamId" : "29",
+    "teamName" : "Seattle Seahawks",
+    "yearFounded" : "1976",
+    "stateId" : "47",
+    "numberOfChampionships" : "1",
+    "lastChampionship" : "2013"
+  }, {
+    "teamId" : "23",
+    "teamName" : "New Orleans Saints",
+    "yearFounded" : "1967",
+    "stateId" : "18",
+    "numberOfChampionships" : "1",
+    "lastChampionship" : "2009"
+  }, {
+    "teamId" : "17",
+    "teamName" : "Las Vegas Raiders",
+    "yearFounded" : "1960",
+    "stateId" : "28",
+    "numberOfChampionships" : "3",
+    "lastChampionship" : "1983"
+  }, {
+    "teamId" : "27",
+    "teamName" : "Pittsburgh Steelers",
+    "yearFounded" : "1933",
+    "stateId" : "38",
+    "numberOfChampionships" : "6",
+    "lastChampionship" : "2008"
+  }, {
+    "teamId" : "22",
+    "teamName" : "New England Patriots",
+    "yearFounded" : "1960",
+    "stateId" : "21",
+    "numberOfChampionships" : "6",
+    "lastChampionship" : "2018"
+  }, {
+    "teamId" : "30",
+    "teamName" : "Tampa Bay Buccaneers",
+    "yearFounded" : "1976",
+    "stateId" : "9",
+    "numberOfChampionships" : "2",
+    "lastChampionship" : "2020"
+  }, {
+    "teamId" : "32",
+    "teamName" : "Washington Commanders",
+    "yearFounded" : "1932",
+    "stateId" : "51",
+    "numberOfChampionships" : "3",
+    "lastChampionship" : "1991"
+  }, {
+    "teamId" : "24",
+    "teamName" : "New York Giants",
+    "yearFounded" : "1925",
+    "stateId" : "32",
+    "numberOfChampionships" : "4",
+    "lastChampionship" : "2011"
+  }, {
+    "teamId" : "28",
+    "teamName" : "San Francisco 49ers",
+    "yearFounded" : "1946",
+    "stateId" : "5",
+    "numberOfChampionships" : "5",
+    "lastChampionship" : "1994"
+  }, {
+    "teamId" : "19",
+    "teamName" : "Los Angeles Rams",
+    "yearFounded" : "1937",
+    "stateId" : "5",
+    "numberOfChampionships" : "2",
+    "lastChampionship" : "2021"
+  } ]
 }
