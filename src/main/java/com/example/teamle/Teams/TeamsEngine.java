@@ -54,8 +54,7 @@ public class TeamsEngine {
         return allTeams;
     }
 
-    public static Team GetTeam(int teamId){
-        Leagues league = GetLeagueFromId(teamId);
+    public static String GetLeagueDbPath(Leagues league){
         String dbPath;
         switch (Objects.requireNonNull(league)){
             case MLB -> dbPath = TeamConstants.MLB_DB_PATH;
@@ -64,6 +63,12 @@ public class TeamsEngine {
             case NFL -> dbPath = TeamConstants.NFL_DB_PATH;
             default -> dbPath = "";
         }
+        return dbPath;
+    }
+
+    public static Team GetTeam(int teamId){
+        Leagues league = GetLeagueFromId(teamId);
+        String dbPath = GetLeagueDbPath(Objects.requireNonNull(league));
         File dbFile;
         try {
             dbFile = GetDBFile(dbPath);
@@ -86,7 +91,7 @@ public class TeamsEngine {
         return selectedTeam;
     }
 
-    private static File GetDBFile(String path) throws FileNotFoundException {
+    public static File GetDBFile(String path) throws FileNotFoundException {
         File dbFile = new File(path);
         if(!dbFile.exists()){
             throw new FileNotFoundException("Given file path \"" + path + "\"");
