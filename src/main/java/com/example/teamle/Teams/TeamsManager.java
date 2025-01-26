@@ -9,4 +9,10 @@ public class TeamsManager {
     public static List<TeamSkeleton> GetAllTeams(){
         return TeamsEngine.GetAllTeams();
     }
+
+    public static void UpdateTeamChampionships(){
+
+    }
 }
+
+
